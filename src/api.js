@@ -13,3 +13,9 @@ export async function getWeeks() {
     const data = await res.json()
     return data    
 }
+
+export async function getWorkouts() {
+    const res = await fetch("http://localhost:8080/workouts")
+    const data = await res.json()
+    return data    
+}

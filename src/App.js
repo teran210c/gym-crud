@@ -1,10 +1,10 @@
 import './App.css';
-import Workouts from './components/Workouts';
+import Weeks from './components/Weeks';
 
 function App() {
   return (
     <div className="App">
-      <Workouts />
+      <Weeks />
     </div>
   );
 }
