@@ -20,10 +20,17 @@ export default function Weeks() {
         fetchWeeks()
 
         async function fetchWorkouts() {
-            const data = await getWorkouts
+            const data = await getWorkouts()
+            console.log(data)
             setWorkouts(data)
         }
         fetchWorkouts()
+
+    //     async function fetchExercises() {
+    //         const data = await getWorkouts
+    //         setWorkouts(data)
+    //     }
+    //     fetchWorkouts()
     }, [])
 
     // async function addWeek() {
@@ -77,9 +84,38 @@ export default function Weeks() {
                                         ➡️
                                     </button>
                                 )}
+                                {week.workouts.map(workout => (
+  <div key={workout.id} style={{ marginTop: "20px" }}>
+    <h3>Workout {workout.titleNumber}</h3>
+
+    <table style={{ width: "100%", borderCollapse: "collapse" }}>
+      <thead>
+        <tr>
+          <th>Muscle Group</th>
+          <th>Exercise</th>
+          <th>Reps</th>
+          <th>Weight</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        {workout.exercises.map(ex => (
+          <tr key={ex.id}>
+            <td>{ex.muscleGroup || "—"}</td>
+            <td>{ex.name || "—"}</td>
+            <td>{ex.reps || "—"}</td>
+            <td>{ex.weight || "—"}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+))}
+
                             </div>
 
-                            <p>hola</p>
+
+
                         </div>
                     </div>
                 ))}
