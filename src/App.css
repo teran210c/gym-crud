@@ -36,3 +36,32 @@
     transform: rotate(360deg);
   }
 }
+
+.slick-prev, .slick-next {
+  font-size: 0; /* oculta el texto por defecto */
+  line-height: 0;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  width: 40px;
+  height: 40px;
+  background: rgba(0,0,0,0.5);
+  border-radius: 50%;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.slick-prev {
+  left: 10px;
+}
+
+.slick-next {
+  right: 10px;
+}
+
+.slick-prev:before, .slick-next:before {
+  content: none; /* elimina las flechas default de slick */
+}

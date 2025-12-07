@@ -1,5 +1,3 @@
-
-
 export async function postWeek() {
     const res = await fetch("http://localhost:8080/weeks", {
         method: "POST",
@@ -8,4 +6,10 @@ export async function postWeek() {
     })
     const data = await res.json();
     return data
+}
+
+export async function getWeeks() {
+    const res = await fetch("http://localhost:8080/weeks")
+    const data = await res.json()
+    return data    
 }
