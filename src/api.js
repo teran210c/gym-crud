@@ -19,3 +19,9 @@ export async function getWorkouts() {
     const data = await res.json()
     return data    
 }
+
+export async function getMuscleGroups() {
+    const res = await fetch("http://localhost:8080/api/muscle-groups")
+    const data = await res.json()
+    return data    
+}
